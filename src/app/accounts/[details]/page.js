@@ -1,5 +1,7 @@
 
-export default function Deatils(){
+export default function Deatils({params}){
+    console.log(params);
+    
     return<div>
         <h1>
             This is account details account page
