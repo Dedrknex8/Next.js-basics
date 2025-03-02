@@ -5,7 +5,7 @@ export default function Account(){
 //    assume user profile is null
     const userProfileInfo = null;
     if (userProfileInfo === null) {
-        redirect('profile')
+        redirect('profile') //this will redirect to profile page directly
     }
     return
     <div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 async function fecthUserdata() {
     try {
@@ -16,9 +17,21 @@ export default async function ServerFetch(){
 
     
     return (
-        <div>
-            <h1>Fetched JSON Data:</h1>
-            <pre>{JSON.stringify(userslist, null, 2)}</pre>
+        <div className="p-10 flex flex-col ">
+            <h1>Server Side data fetching ...</h1>
+            <ul>
+                {
+                    userslist && userslist.length>0
+                    ?userslist.map((user)=>(
+                        <Link href={`/server-data-fetch/${user.id}`}>
+                            <li className="cursor-pointer">
+                            {user.firstName}
+                            </li>
+                        </Link>
+                    ))
+                    :null
+                }
+            </ul>
         </div>
     );
 }
